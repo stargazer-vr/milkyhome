@@ -11,10 +11,45 @@
   <link rel="manifest" href="/manifest.json" />
   <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fmilkyhome1103back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
   <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
-  </head>
+
+  <!-- ここでトップの画像用スタイルを定義 -->
+  <style>
+    .hero {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f8f8;
+    }
+    .hero img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+    /* スマホで高さを調整したい場合 */
+    @media (max-width: 640px) {
+      .hero {
+        max-height: 240px;
+      }
+    }
+  </style>
+</head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!-- ここに保育園の画像を追加 -->
+  <header class="hero" role="banner" aria-label="保育園の写真">
+    <!-- ローカルに画像を置く場合（推奨）: /hoikuen.jpg を public フォルダに追加 -->
+    <img src="/hoikuen.jpg" alt="保育園の外観" />
+    <!-- 外部URLを使う場合の例:
+    <img src="https://example.com/path/to/hoikuen.jpg" alt="保育園の外観" />
+    -->
+  </header>
+
   <div class="dhiwise-code" id="root"></div>
   <script type="module" src="/src/index.jsx"></script>
 </body>
